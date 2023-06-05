@@ -23,6 +23,10 @@ void loop() {
     cnt = 0;
     client.connect(host, HOST_PORT);
     delay(1000);
+    while (Serial.available()) {
+      Serial.read();
+      delayMicroseconds(250);
+    }
   } else {
     Serial.write(1);
   }
